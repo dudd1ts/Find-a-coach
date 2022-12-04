@@ -2,12 +2,12 @@
   <form @submit.prevent="submitForm">
     <div class="form-control" :class="{invalid: !firstName.isValid}">
       <label for="firstname">Firstname</label>
-      <input type="text" id="firstname" v-model.trim="firstName.val" @blur="clearValidity('firstname')" />
+      <input type="text" id="firstname" v-model.trim="firstName.val" @blur="clearValidity('firstName')" />
       <p v-if="!firstName.isValid">Firstname must not be empty.</p>
     </div>
     <div class="form-control" :class="{invalid: !lastName.isValid}">
       <label for="lastname">Lastname</label>
-      <input type="text" id="lastname" v-model.trim="lastName.val" @blur="clearValidity('lastname')"/>
+      <input type="text" id="lastname" v-model.trim="lastName.val" @blur="clearValidity('lastName')"/>
       <p v-if="!lastName.isValid">Lastname must not be empty.</p>
     </div>
     <div class="form-control" :class="{invalid: !description.isValid}">
@@ -83,9 +83,6 @@ export default {
       },
       formIsValid: true
     };
-  },
-  mounted() {
-    console.log('this.firstName', this.areas.val);
   },
   methods: {
     clearValidity(input) {

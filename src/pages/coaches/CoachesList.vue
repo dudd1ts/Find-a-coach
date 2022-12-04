@@ -45,7 +45,6 @@ export default {
       return this.$store.getters['coaches/isCoach'];
     },
     filteredCoaches() {
-      console.log('filteredCoaches');
       const coaches = this.$store.getters['coaches/coaches'];
       return coaches.filter(coach => {
         if ((this.activeFilters.frontend && coach.areas.includes('frontend')) ||
@@ -53,7 +52,7 @@ export default {
             (this.activeFilters.career && coach.areas.includes('career'))) {
           return true;
         }
-        console.log('false');
+
         return false;
       });
     },
